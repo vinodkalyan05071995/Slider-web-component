@@ -1,0 +1,14 @@
+/* Shared styles for the example pages only — not part of the component. */
+body { font: 16px/1.5 system-ui, sans-serif; max-width: 1000px; margin: 0 auto; padding: 1.5rem 1rem 4rem; color: #111; }
+h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+h1 + p { margin-top: 0; color: #555; }
+h2 { font-size: 1.05rem; margin: 2rem 0 0.75rem; }
+a.back { font-size: 0.9rem; }
+li { margin: 0.35rem 0; }
+code { background: #f1f1f1; padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+img { display: block; width: 100%; height: auto; }
+.wide img { aspect-ratio: 2 / 1; object-fit: cover; border-radius: 12px; }
+.thumb img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.card { display: grid; place-items: center; aspect-ratio: 4 / 3; border-radius: 12px; background: var(--bg, #334155); color: #fff; font-size: 1.5rem; font-weight: 700; }
+.card a { color: inherit; }
+.log { font: 13px ui-monospace, monospace; color: #555; }

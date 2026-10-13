@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slider-element demo</title>
+  <link rel="stylesheet" href="slider-element.css">
+  <script src="slider-element.js" defer></script>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 4rem; color: #111; }
+    h2 { margin: 2.5rem 0 0.75rem; font-size: 1.15rem; }
+    code { background: #f1f1f1; padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+    img { display: block; width: 100%; height: auto; }
+    .hero img { aspect-ratio: 2 / 1; object-fit: cover; border-radius: 12px; }
+    #thumbs { margin-top: 0.75rem; }
+    #thumbs img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+    .card { display: grid; place-items: center; aspect-ratio: 4 / 3; border-radius: 12px; color: #fff; font-size: 1.5rem; font-weight: 700; }
+    .card a { color: inherit; }
+    #log { font: 13px ui-monospace, monospace; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>&lt;slider-element&gt;</h1>
+  <p><a href="examples/index.html">Standalone examples</a> · <a href="https://github.com/vinodkalyan05071995/Slider-web-component/tree/main/docs">Documentation</a></p>
+
+  <h2>1. Gallery + thumbnails (<code>loop</code>, <code>nav-for</code>)</h2>
+  <slider-element id="gallery" class="hero" label="Product gallery" loop no-pagination>
+    <div><img src="https://picsum.photos/seed/ls1/1200/600" alt="Mountain lake at sunrise"></div>
+    <div><img src="https://picsum.photos/seed/ls2/1200/600" alt="City street at night"></div>
+    <div><img src="https://picsum.photos/seed/ls3/1200/600" alt="Forest path"></div>
+    <div><img src="https://picsum.photos/seed/ls4/1200/600" alt="Desert dunes"></div>
+    <div><img src="https://picsum.photos/seed/ls5/1200/600" alt="Ocean waves"></div>
+    <div><img src="https://picsum.photos/seed/ls6/1200/600" alt="Snowy peaks"></div>
+  </slider-element>
+  <slider-element id="thumbs" nav-for="gallery" label="Gallery thumbnails" per-view="4" gap="8" no-pagination
+               breakpoints='{"768": {"perView": 6}}'>
+    <div><img src="https://picsum.photos/seed/ls1/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/ls2/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/ls3/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/ls4/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/ls5/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/ls6/240/180" alt=""></div>
+  </slider-element>
+  <p id="log">slide-change: —</p>
+
+  <h2>2. Responsive cards (<code>breakpoints</code>, <code>loop</code>, <code>autoplay</code>)</h2>
+  <slider-element label="Featured collections" loop autoplay="3500" per-view="1.2" gap="12"
+               breakpoints='{"640": {"perView": 2, "gap": 16}, "1024": {"perView": 3, "perMove": 3, "gap": 20}}'>
+    <div class="card" style="background:#0f766e"><a href="#">Card 1</a></div>
+    <div class="card" style="background:#7c3aed"><a href="#">Card 2</a></div>
+    <div class="card" style="background:#be123c"><a href="#">Card 3</a></div>
+    <div class="card" style="background:#b45309"><a href="#">Card 4</a></div>
+    <div class="card" style="background:#1d4ed8"><a href="#">Card 5</a></div>
+    <div class="card" style="background:#4d7c0f"><a href="#">Card 6</a></div>
+    <div class="card" style="background:#9d174d"><a href="#">Card 7</a></div>
+  </slider-element>
+
+  <h2>3. Fade transition (<code>transition="fade"</code>, <code>rewind</code>, <code>autoplay</code>)</h2>
+  <slider-element label="Announcements" class="hero" transition="fade" rewind autoplay speed="700">
+    <div><img src="https://picsum.photos/seed/lsf1/1200/600" alt="Spring collection"></div>
+    <div><img src="https://picsum.photos/seed/lsf2/1200/600" alt="Free shipping"></div>
+    <div><img src="https://picsum.photos/seed/lsf3/1200/600" alt="New arrivals"></div>
+  </slider-element>
+
+  <h2>4. Non-looping, peek (<code>per-view="2.5"</code>)</h2>
+  <slider-element label="Peek example" per-view="1.5" gap="12" breakpoints='{"768": {"perView": 2.5}}'>
+    <div class="card" style="background:#334155">A</div>
+    <div class="card" style="background:#475569">B</div>
+    <div class="card" style="background:#64748b">C</div>
+    <div class="card" style="background:#334155">D</div>
+    <div class="card" style="background:#475569">E</div>
+  </slider-element>
+
+  <h2>5. Right-to-left (<code>dir="rtl"</code>, <code>loop</code>)</h2>
+  <div dir="rtl" lang="ar">
+    <slider-element label="شرائح" loop per-view="1.5" gap="12" breakpoints='{"768": {"perView": 3}}'>
+      <div class="card" style="background:#0e7490"><a href="#">١</a></div>
+      <div class="card" style="background:#6d28d9"><a href="#">٢</a></div>
+      <div class="card" style="background:#a21caf"><a href="#">٣</a></div>
+      <div class="card" style="background:#c2410c"><a href="#">٤</a></div>
+      <div class="card" style="background:#15803d"><a href="#">٥</a></div>
+    </slider-element>
+  </div>
+
+  <h2>6. Vertical (<code>direction="ttb"</code>, <code>height</code>)</h2>
+  <slider-element label="Vertical example" direction="ttb" height="360px" per-view="2" gap="12" loop>
+    <div class="card" style="background:#1e3a8a; aspect-ratio:auto">1</div>
+    <div class="card" style="background:#1e40af; aspect-ratio:auto">2</div>
+    <div class="card" style="background:#1d4ed8; aspect-ratio:auto">3</div>
+    <div class="card" style="background:#2563eb; aspect-ratio:auto">4</div>
+  </slider-element>
+
+  <script>
+    document.getElementById('gallery').addEventListener('slide-change', e => {
+      document.getElementById('log').textContent = `slide-change: ${e.detail.prev} → ${e.detail.index}`;
+    });
+  </script>
+</body>
+</html>

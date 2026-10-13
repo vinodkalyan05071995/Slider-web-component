@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slider-element — Thumbnails</title>
+  <link rel="stylesheet" href="../slider-element.css">
+  <link rel="stylesheet" href="examples.css">
+  <script src="../slider-element.js" defer></script>
+</head>
+<body>
+  <a class="back" href="index.html">← All examples</a>
+  <h1>Thumbnails</h1>
+  <p>A second slider with <code>nav-for="gallery"</code> becomes the thumbnail navigator for the slider with <code>id="gallery"</code>.</p>
+
+  <slider-element id="gallery" class="wide" label="Product gallery" loop no-pagination>
+    <div><img src="https://picsum.photos/seed/thumb1/1200/600" alt="Example photo 1"></div>
+    <div><img src="https://picsum.photos/seed/thumb2/1200/600" alt="Example photo 2"></div>
+    <div><img src="https://picsum.photos/seed/thumb3/1200/600" alt="Example photo 3"></div>
+    <div><img src="https://picsum.photos/seed/thumb4/1200/600" alt="Example photo 4"></div>
+    <div><img src="https://picsum.photos/seed/thumb5/1200/600" alt="Example photo 5"></div>
+    <div><img src="https://picsum.photos/seed/thumb6/1200/600" alt="Example photo 6"></div>
+  </slider-element>
+
+  <slider-element nav-for="gallery" class="thumb" label="Gallery thumbnails" per-view="4" gap="8" no-pagination
+             breakpoints='{"768": {"perView": 6}}' style="margin-top: 0.75rem">
+    <div><img src="https://picsum.photos/seed/thumb1/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/thumb2/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/thumb3/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/thumb4/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/thumb5/240/180" alt=""></div>
+    <div><img src="https://picsum.photos/seed/thumb6/240/180" alt=""></div>
+  </slider-element>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slider-element — Translations</title>
+  <link rel="stylesheet" href="../slider-element.css">
+  <link rel="stylesheet" href="examples.css">
+  <script src="../slider-element.js"></script>
+  <script>
+    Object.assign(SliderElement.i18n, {
+      carousel: 'carrousel',
+      slide: 'diapositive',
+      slideLabel: '%s sur %s',
+      status: 'Diapositive %s sur %s',
+      prev: 'Diapositive précédente',
+      next: 'Diapositive suivante',
+      goTo: 'Aller à la diapositive %s',
+      pagination: 'Choisir une diapositive',
+      select: 'Afficher la diapositive %s',
+      play: 'Lancer le défilement',
+      pause: 'Mettre en pause le défilement',
+    });
+  </script>
+</head>
+<body>
+  <a class="back" href="index.html">← All examples</a>
+  <h1>Translations</h1>
+  <p>Override <code>SliderElement.i18n</code> before any slider is created: load the script without <code>defer</code> and set the strings right after it (or set them before your deferred bundle defines the element). <code>%s</code> placeholders are filled in order.</p>
+
+  <slider-element label="Diaporama" lang="fr" loop autoplay="4000">
+    <div class="card" style="--bg:#0f766e"><a href="#">Slide 1</a></div>
+    <div class="card" style="--bg:#7c3aed"><a href="#">Slide 2</a></div>
+    <div class="card" style="--bg:#be123c"><a href="#">Slide 3</a></div>
+    <div class="card" style="--bg:#b45309"><a href="#">Slide 4</a></div>
+  </slider-element>
+</body>
+</html>

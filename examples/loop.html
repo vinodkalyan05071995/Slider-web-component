@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slider-element — Loop &amp; rewind</title>
+  <link rel="stylesheet" href="../slider-element.css">
+  <link rel="stylesheet" href="examples.css">
+  <script src="../slider-element.js" defer></script>
+</head>
+<body>
+  <a class="back" href="index.html">← All examples</a>
+  <h1>Loop &amp; rewind</h1>
+  <p><code>loop</code> wraps around seamlessly. <code>rewind</code> jumps back to the first slide after the last one.</p>
+
+  <h2>loop</h2>
+  <slider-element label="Loop example" loop per-view="2" gap="16">
+    <div class="card" style="--bg:#0f766e"><a href="#">Slide 1</a></div>
+    <div class="card" style="--bg:#7c3aed"><a href="#">Slide 2</a></div>
+    <div class="card" style="--bg:#be123c"><a href="#">Slide 3</a></div>
+    <div class="card" style="--bg:#b45309"><a href="#">Slide 4</a></div>
+    <div class="card" style="--bg:#1d4ed8"><a href="#">Slide 5</a></div>
+    <div class="card" style="--bg:#4d7c0f"><a href="#">Slide 6</a></div>
+  </slider-element>
+
+  <h2>rewind</h2>
+  <slider-element label="Rewind example" rewind per-view="2" gap="16">
+    <div class="card" style="--bg:#0f766e"><a href="#">Slide 1</a></div>
+    <div class="card" style="--bg:#7c3aed"><a href="#">Slide 2</a></div>
+    <div class="card" style="--bg:#be123c"><a href="#">Slide 3</a></div>
+    <div class="card" style="--bg:#b45309"><a href="#">Slide 4</a></div>
+    <div class="card" style="--bg:#1d4ed8"><a href="#">Slide 5</a></div>
+    <div class="card" style="--bg:#4d7c0f"><a href="#">Slide 6</a></div>
+  </slider-element>
+</body>
+</html>

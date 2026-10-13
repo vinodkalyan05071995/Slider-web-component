@@ -1,0 +1,57 @@
+{
+  "name": "slider-element",
+  "version": "1.0.0",
+  "description": "Lightweight, dependency-free, accessible slider web component: loop, autoplay, responsive per-view, fade, thumbnails, RTL and vertical.",
+  "keywords": [
+    "slider",
+    "carousel",
+    "web-component",
+    "custom-element",
+    "accessible",
+    "a11y",
+    "shopify",
+    "thumbnails"
+  ],
+  "author": "vinodkalyan05071995",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinodkalyan05071995/Slider-web-component.git"
+  },
+  "homepage": "https://github.com/vinodkalyan05071995/Slider-web-component#readme",
+  "bugs": "https://github.com/vinodkalyan05071995/Slider-web-component/issues",
+  "main": "./slider-element.js",
+  "types": "./slider-element.d.ts",
+  "unpkg": "./dist/slider-element.min.js",
+  "jsdelivr": "./dist/slider-element.min.js",
+  "style": "./slider-element.css",
+  "exports": {
+    ".": {
+      "types": "./slider-element.d.ts",
+      "default": "./slider-element.js"
+    },
+    "./min": "./dist/slider-element.min.js",
+    "./css": "./slider-element.css",
+    "./css/min": "./dist/slider-element.min.css",
+    "./slider-element.css": "./slider-element.css",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": true,
+  "files": [
+    "slider-element.js",
+    "slider-element.css",
+    "slider-element.d.ts",
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "esbuild slider-element.js --minify --mangle-props=^_ --target=es2022 --banner:js=\"/*! slider-element v1.0.0 | MIT | github.com/vinodkalyan05071995/Slider-web-component */\" --legal-comments=none --outfile=dist/slider-element.min.js",
+    "build:css": "esbuild slider-element.css --minify --banner:css=\"/*! slider-element v1.0.0 | MIT | github.com/vinodkalyan05071995/Slider-web-component */\" --legal-comments=none --outfile=dist/slider-element.min.css",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

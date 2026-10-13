@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slider-element — Vertical</title>
+  <link rel="stylesheet" href="../slider-element.css">
+  <link rel="stylesheet" href="examples.css">
+  <script src="../slider-element.js" defer></script>
+</head>
+<body>
+  <a class="back" href="index.html">← All examples</a>
+  <h1>Vertical</h1>
+  <p><code>direction="ttb"</code> slides top to bottom. Give it a <code>height</code> (any CSS length; it can change per breakpoint). Use the Up/Down arrow keys or drag vertically.</p>
+
+  <slider-element label="Vertical example" direction="ttb" height="360px" per-view="2" gap="12" loop
+             breakpoints='{"768": {"height": "480px"}}'>
+    <div class="card" style="--bg:#0f766e; aspect-ratio: auto"><a href="#">Slide 1</a></div>
+    <div class="card" style="--bg:#7c3aed; aspect-ratio: auto"><a href="#">Slide 2</a></div>
+    <div class="card" style="--bg:#be123c; aspect-ratio: auto"><a href="#">Slide 3</a></div>
+    <div class="card" style="--bg:#b45309; aspect-ratio: auto"><a href="#">Slide 4</a></div>
+    <div class="card" style="--bg:#1d4ed8; aspect-ratio: auto"><a href="#">Slide 5</a></div>
+  </slider-element>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slider-element — Right-to-left</title>
+  <link rel="stylesheet" href="../slider-element.css">
+  <link rel="stylesheet" href="examples.css">
+  <script src="../slider-element.js" defer></script>
+</head>
+<body>
+  <a class="back" href="index.html">← All examples</a>
+  <h1>Right-to-left</h1>
+  <p>Picked up automatically from <code>dir="rtl"</code> on the page or a parent element (or set <code>direction="rtl"</code>). Arrows, drag and arrow keys follow the reading direction.</p>
+
+  <div dir="rtl" lang="ar">
+    <slider-element label="شرائح" loop per-view="1.5" gap="12" breakpoints='{"768": {"perView": 3}}'>
+      <div class="card" style="--bg:#0f766e"><a href="#">Slide 1</a></div>
+      <div class="card" style="--bg:#7c3aed"><a href="#">Slide 2</a></div>
+      <div class="card" style="--bg:#be123c"><a href="#">Slide 3</a></div>
+      <div class="card" style="--bg:#b45309"><a href="#">Slide 4</a></div>
+      <div class="card" style="--bg:#1d4ed8"><a href="#">Slide 5</a></div>
+    </slider-element>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slider-element — Examples</title>
+  <link rel="stylesheet" href="examples.css">
+</head>
+<body>
+  <a class="back" href="../index.html">← Full demo</a>
+  <h1>slider-element examples</h1>
+  <p>Each page is standalone, so you can view its source and copy the markup. Serve the repo root with any static server, e.g. <code>python3 -m http.server</code>.</p>
+  <ul>
+    <li><a href="basic.html">Basic</a> — One slide at a time with arrows, pagination, drag/swipe and keyboard. No options needed.</li>
+    <li><a href="loop.html">Loop &amp; rewind</a> — <code>loop</code> wraps around seamlessly. <code>rewind</code> jumps back to the first slide after the last one.</li>
+    <li><a href="responsive.html">Responsive (breakpoints)</a> — Mobile-first <code>min-width</code> breakpoints change <code>perView</code>, <code>perMove</code> and <code>gap</code>. A fractional per-view lets the next slide peek in. Resize the window to see it change.</li>
+    <li><a href="autoplay.html">Autoplay</a> — <code>autoplay="3000"</code> sets the interval in ms. It adds a play/pause button, pauses on hover, stops when keyboard focus enters, and doesn't start for users who prefer reduced motion.</li>
+    <li><a href="fade.html">Fade transition</a> — <code>transition="fade"</code> cross-fades slides. <code>speed</code> sets the duration in ms.</li>
+    <li><a href="thumbnails.html">Thumbnails</a> — A second slider with <code>nav-for="gallery"</code> becomes the thumbnail navigator for the slider with <code>id="gallery"</code>.</li>
+    <li><a href="rtl.html">Right-to-left</a> — Picked up automatically from <code>dir="rtl"</code> on the page or a parent element (or set <code>direction="rtl"</code>). Arrows, drag and arrow keys follow the reading direction.</li>
+    <li><a href="vertical.html">Vertical</a> — <code>direction="ttb"</code> slides top to bottom. Give it a <code>height</code> (any CSS length; it can change per breakpoint). Use the Up/Down arrow keys or drag vertically.</li>
+    <li><a href="api.html">JavaScript API &amp; events</a> — Drive the slider from your own controls and listen for <code>slide-change</code>.</li>
+    <li><a href="i18n.html">Translations</a> — Override <code>SliderElement.i18n</code> before any slider is created: load the script without <code>defer</code> and set the strings right after it (or set them before your deferred bundle defines the element). <code>%s</code> placeholders are filled in order.</li>
+    <li><a href="theming.html">Theming</a> — Restyle with CSS custom properties and the <code>.slider-element__*</code> / <code>.is-*</code> class hooks.</li>
+    <li><a href="shopify/slider-element-gallery.liquid">Shopify section</a> — a theme section with blocks, thumbnails and schema settings (Liquid source).</li>
+  </ul>
+</body>
+</html>

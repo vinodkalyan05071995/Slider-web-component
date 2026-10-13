@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slider-element — Theming</title>
+  <link rel="stylesheet" href="../slider-element.css">
+  <link rel="stylesheet" href="examples.css">
+  <script src="../slider-element.js" defer></script>
+</head>
+<body>
+  <a class="back" href="index.html">← All examples</a>
+  <h1>Theming</h1>
+  <p>Restyle with CSS custom properties and the <code>.slider-element__*</code> / <code>.is-*</code> class hooks.</p>
+
+  <style>
+    .theme-dark {
+      --slider-element-arrow-bg: #111;
+      --slider-element-arrow-color: #fff;
+      --slider-element-arrow-size: 3rem;
+      --slider-element-dot-color: #cbd5e1;
+      --slider-element-dot-active: #e11d48;
+      --slider-element-focus: #e11d48;
+      --slider-element-easing: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .theme-dark .slider-element__arrow { border-radius: 8px; }
+    .theme-dark .slider-element__slide { transition: transform 0.4s, opacity 0.4s; }
+    .theme-dark .slider-element__slide:not(.is-active) { transform: scale(0.92); opacity: 0.6; }
+  </style>
+
+  <slider-element label="Themed example" class="theme-dark" loop per-view="1.4" gap="0" speed="600"
+             breakpoints='{"768": {"perView": 2.2}}'>
+    <div class="card" style="--bg:#0f766e"><a href="#">Slide 1</a></div>
+    <div class="card" style="--bg:#7c3aed"><a href="#">Slide 2</a></div>
+    <div class="card" style="--bg:#be123c"><a href="#">Slide 3</a></div>
+    <div class="card" style="--bg:#b45309"><a href="#">Slide 4</a></div>
+    <div class="card" style="--bg:#1d4ed8"><a href="#">Slide 5</a></div>
+    <div class="card" style="--bg:#4d7c0f"><a href="#">Slide 6</a></div>
+  </slider-element>
+</body>
+</html>
