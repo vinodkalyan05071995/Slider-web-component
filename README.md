@@ -14,23 +14,83 @@ About **4.6 KB JS + 1.4 KB CSS** gzipped.
 
 ## Install
 
+[![npm](https://img.shields.io/npm/v/slider-element)](https://www.npmjs.com/package/slider-element)
+[![gzip size](https://img.shields.io/badge/gzip-4.6%20KB%20JS%20%2B%201.4%20KB%20CSS-blue)](https://www.npmjs.com/package/slider-element)
+[![license](https://img.shields.io/npm/l/slider-element)](LICENSE)
+
+### npm
+
 ```bash
 npm install slider-element
+# or
+yarn add slider-element
+# or
+pnpm add slider-element
 ```
+
+Import it once, anywhere in your app's entry point. The import registers `<slider-element>`, so there's nothing to call.
 
 ```js
 import 'slider-element';
 import 'slider-element/css';
 ```
 
-Or from a CDN:
+If your setup doesn't import CSS from JavaScript, import the stylesheet from your CSS instead (Vite, Parcel and
+`postcss-import` resolve package paths):
+
+```css
+@import "slider-element/css";
+```
+
+Then use the element in your HTML or templates:
+
+```html
+<slider-element label="Featured products" loop per-view="3" gap="16">
+  <div>Slide 1</div>
+  <div>Slide 2</div>
+  <div>Slide 3</div>
+</slider-element>
+```
+
+**Import paths**
+
+| Import | File | Use it for |
+|---|---|---|
+| `slider-element` | `slider-element.js` | Bundlers (they minify it for you) |
+| `slider-element/min` | `dist/slider-element.min.js` | Pre-minified script |
+| `slider-element/css` | `slider-element.css` | Styles |
+| `slider-element/css/min` | `dist/slider-element.min.css` | Pre-minified styles |
+
+**TypeScript.** Types are included. The package registers the element and doesn't export anything at runtime, so
+import its types with `import type`:
+
+```ts
+import 'slider-element';
+import type { SliderElement } from 'slider-element';
+
+const slider = document.querySelector('slider-element'); // typed as SliderElement | null
+slider?.addEventListener('slide-change', e => console.log(e.detail.index)); // typed event
+```
+
+**Frameworks.** It's a standard custom element, so it works in React, Vue, Svelte, Angular and others. Import the
+package once on the client, not during server-side rendering. In Vue, tell the compiler it's a custom element:
+`compilerOptions.isCustomElement = tag => tag === 'slider-element'`.
+
+### CDN
+
+No build step needed:
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slider-element@1/dist/slider-element.min.css">
 <script src="https://cdn.jsdelivr.net/npm/slider-element@1/dist/slider-element.min.js" defer></script>
 ```
 
-For a Shopify theme, copy `dist/slider-element.min.js` and `dist/slider-element.min.css` into `assets/`. See [docs/shopify.md](docs/shopify.md).
+`@1` gets the latest 1.x release. Pin an exact version (e.g. `@1.0.0`) in production if you prefer.
+
+### Shopify
+
+Copy `dist/slider-element.min.js` and `dist/slider-element.min.css` into your theme's `assets/` folder. See
+[docs/shopify.md](docs/shopify.md) for setup and a ready-made section.
 
 ## Usage
 

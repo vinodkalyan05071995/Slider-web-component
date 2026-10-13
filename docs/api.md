@@ -126,8 +126,12 @@ Example: [i18n.html](../examples/i18n.html). In Shopify, fill these from your lo
 
 Types ship with the package:
 
+The package doesn't export anything at runtime (importing it registers the element), so use `import type` for the
+types:
+
 ```ts
 import 'slider-element';
+import type { SliderElement } from 'slider-element';
 
 const slider = document.querySelector('slider-element');   // SliderElement | null
 slider?.addEventListener('slide-change', e => e.detail.index); // typed CustomEvent

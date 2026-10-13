@@ -5,13 +5,16 @@
 ### npm
 
 ```bash
-npm install slider-element
+npm install slider-element   # or: yarn add slider-element / pnpm add slider-element
 ```
 
 ```js
 import 'slider-element';      // registers <slider-element>
-import 'slider-element/css';  // or include the CSS however your bundler handles it
+import 'slider-element/css';  // or @import "slider-element/css"; from your CSS
 ```
+
+Types are included. Use `import type { SliderElement } from 'slider-element'`, since the package doesn't export
+anything at runtime.
 
 | Import path | File |
 |---|---|
