@@ -25,7 +25,7 @@ can drop into `sections/`. It includes:
 - image blocks, each with an optional caption and link
 - settings for transition, slides per view (mobile and desktop), moving a page at a time, gap, speed, loop, autoplay,
   pagination, thumbnails, image ratio and corner radius
-- responsive `image_tag` output with lazy loading
+- responsive `image_tag` output: lazy loading for later slides, and an immediate high-priority load for the first slide when the section is near the top of the page
 - a heading used as the slider's accessible name (`aria-labelledby`)
 
 The basic pattern:

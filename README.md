@@ -116,6 +116,7 @@ Every direct child becomes a slide.
 | [Theming](docs/theming.md) | CSS custom properties, class hooks, recipes |
 | [Accessibility](docs/accessibility.md) | What's built in and what's up to you |
 | [Shopify](docs/shopify.md) | Theme setup, example section, product gallery, theme editor |
+| [Performance](docs/performance.md) | Measured results, image loading, avoiding layout shift |
 
 ## Examples
 

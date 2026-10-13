@@ -9,5 +9,6 @@
 | [Theming](theming.md) | CSS custom properties, class hooks, generated markup |
 | [Accessibility](accessibility.md) | What the component does for keyboard and screen-reader users, and what's left to you |
 | [Shopify](shopify.md) | Adding it to a theme, the example section, theme editor notes |
+| [Performance](performance.md) | Measured results and tips for images, layout shift and loading |
 
 Runnable examples live in [`../examples`](../examples/index.html).

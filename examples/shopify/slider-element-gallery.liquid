@@ -37,9 +37,19 @@
     {%- for block in section.blocks -%}
       <div {{ block.shopify_attributes }}>
         {%- capture image_html -%}
+          {%- liquid
+            # The first slide of a section near the top of the page is likely the LCP image: load it right away.
+            assign loading = 'lazy'
+            assign priority = 'auto'
+            if forloop.first and section.index <= 2
+              assign loading = 'eager'
+              assign priority = 'high'
+            endif
+          -%}
           {%- if block.settings.image != blank -%}
             {{ block.settings.image | image_url: width: 1600 | image_tag:
-              loading: 'lazy',
+              loading: loading,
+              fetchpriority: priority,
               widths: '375, 750, 1100, 1600',
               sizes: '(min-width: 750px) 50vw, 100vw',
               alt: block.settings.image.alt
